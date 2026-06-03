@@ -1,17 +1,27 @@
 ---
-
+import Navbar from "../components/Layout/Navbar";
+import Hero from "../components/Layout/Hero";
+import ChordSearch from "../components/chord/ChordSearch";
+import "../styles/global.css";
+import Piano from "../components/Piano/Piano";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="es">
+  <body
+    class="min-h-screen
+      bg-gradient-to-br
+      from-zinc-950
+      via-slate-900
+      to-black
+      text-white"
+  >
+    <Navbar client:load />
+
+    <main class="mx-auto max-w-7xl px-6">
+      <Hero client:load />
+
+      <ChordSearch client:load />
+      <Piano client:load />
+    </main>
+  </body>
 </html>
