@@ -5,7 +5,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <span className="text-3xl">🎹</span>
 
-          <h1 className="text-xl font-bold">PianoChord</h1>
+          <h1 className="text-xl font-bold">Pianova</h1>
         </div>
 
         <nav className="hidden md:flex gap-8 text-zinc-300">

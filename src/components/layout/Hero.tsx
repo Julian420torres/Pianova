@@ -14,7 +14,7 @@ export default function Hero() {
           text-transparent
         "
       >
-        PianoChord
+        Pianova
       </h1>
 
       <p className="mt-6 text-xl text-zinc-400">
