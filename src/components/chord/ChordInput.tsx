@@ -9,7 +9,7 @@ export default function ChordInput({ value, onChange }: ChordInputProps) {
       type="text"
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      placeholder="C, Cm, D, Dm..."
+      placeholder="C, Cm, C7, Cm7, Cmaj7, Cdim..."
       className="
         w-full
         rounded-2xl

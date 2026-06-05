@@ -1,16 +1,23 @@
-import { useState } from "react";
-
 import Card from "../ui/Card";
 import Tabs from "../ui/Tabs";
 import ChordInput from "./ChordInput";
 
-import { getChordNotes } from "../../lib/chordEngine";
+interface ChordSearchProps {
+  chord: string;
+  setChord: (value: string) => void;
+  notes: string[];
 
-export default function ChordSearch() {
-  const [chord, setChord] = useState("C");
+  instrument: "piano" | "guitar";
+  setInstrument: (instrument: "piano" | "guitar") => void;
+}
 
-  const notes = getChordNotes(chord);
-
+export default function ChordSearch({
+  chord,
+  setChord,
+  notes,
+  instrument,
+  setInstrument,
+}: ChordSearchProps) {
   return (
     <Card>
       <div className="space-y-6">
@@ -18,12 +25,12 @@ export default function ChordSearch() {
 
         <ChordInput value={chord} onChange={setChord} />
 
-        <Tabs />
+        <Tabs instrument={instrument} onChange={setInstrument} />
 
         <div className="rounded-xl bg-zinc-900 p-6">
-          <p className="text-zinc-400 mb-3">Notas del acorde</p>
+          <p className="mb-3 text-zinc-400">Notas del acorde</p>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             {notes.map((note) => (
               <span
                 key={note}

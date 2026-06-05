@@ -1,29 +1,43 @@
-export default function Tabs() {
+interface TabsProps {
+  instrument: "piano" | "guitar";
+  onChange: (instrument: "piano" | "guitar") => void;
+}
+
+export default function Tabs({ instrument, onChange }: TabsProps) {
   return (
     <div className="flex justify-center gap-3">
       <button
-        className="
+        onClick={() => onChange("piano")}
+        className={`
           rounded-xl
-          bg-cyan-500
           px-5
           py-2
           font-semibold
-        "
+          transition
+          ${
+            instrument === "piano"
+              ? "bg-cyan-500"
+              : "border border-white/10 hover:bg-white/5"
+          }
+        `}
       >
         Piano
       </button>
 
       <button
-        className="
+        onClick={() => onChange("guitar")}
+        className={`
           rounded-xl
-          border
-          border-white/10
           px-5
           py-2
           font-semibold
-          hover:bg-white/5
           transition
-        "
+          ${
+            instrument === "guitar"
+              ? "bg-cyan-500"
+              : "border border-white/10 hover:bg-white/5"
+          }
+        `}
       >
         Guitarra
       </button>
