@@ -1,8 +1,15 @@
-export default function ChordInput() {
+interface ChordInputProps {
+  value: string;
+  onChange: (value: string) => void;
+}
+
+export default function ChordInput({ value, onChange }: ChordInputProps) {
   return (
     <input
       type="text"
-      placeholder="Escribe un acorde..."
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      placeholder="C, Cm, C7, Cm7, Cmaj7, Cdim..."
       className="
         w-full
         rounded-2xl

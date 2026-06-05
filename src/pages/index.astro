@@ -1,9 +1,10 @@
 ---
-import Navbar from "../components/Layout/Navbar";
-import Hero from "../components/Layout/Hero";
-import ChordSearch from "../components/chord/ChordSearch";
+import Navbar from "../components/layout/Navbar";
+import Hero from "../components/layout/Hero";
+
 import "../styles/global.css";
-import Piano from "../components/Piano/Piano";
+
+import ChordApp from "../components/chord/ChordApp";
 ---
 
 <html lang="es">
@@ -20,8 +21,7 @@ import Piano from "../components/Piano/Piano";
     <main class="mx-auto max-w-7xl px-6">
       <Hero client:load />
 
-      <ChordSearch client:load />
-      <Piano client:load />
+      <ChordApp client:load />
     </main>
   </body>
 </html>
