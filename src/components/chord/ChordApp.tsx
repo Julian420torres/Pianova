@@ -52,7 +52,7 @@ export default function ChordApp() {
 
       <RecentChords chords={recentChords} onSelect={setChord} />
 
-      {inversions.length > 1 && (
+      {instrument === "piano" && inversions.length > 1 && (
         <div className="mt-6 flex justify-center">
           <InversionTabs
             selected={selectedInversion}
